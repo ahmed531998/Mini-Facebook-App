@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="content-section">
+      <div class="media">
+        <div class="media-body">
+          <h2 class="account-heading">
+             {{user.name}}
+          </h2>
+          <p class="text-secondary">
+             <label> Username: </label>
+             {{user.screenname}}
+           </p>
+          <p class="text-secondary">
+             <label> Income: </label>
+             {{user.income}}
+          </p>
+          <p class="text-secondary">
+             <label> Age: </label>
+             {{user.age}}
+          </p>
+          <p class="text-secondary">
+             <label> Hobbies: </label>
+             {{user.hobby}}
+          </p>
+        </div>
+      </div>
+    </div>
+{% endblock content %}

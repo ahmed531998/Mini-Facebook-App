@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+{% block content %}
+
+    {% if current_user.is_authenticated %}
+      <h4>Your Posts</h4>
+      {% for post in posts %}
+          <article class="media content-section">
+            <div class="media-body">
+              <div class="article-metadata">
+                <small class="text-muted">{{ post.createdat }}</small>
+              </div>
+              <p class="article-content">{{ post.message }}</p>
+            </div>
+          </article>
+      {% endfor %}
+    {% else %}
+        <h3>Welcome to MiniFacebook</h3>
+    {% endif %}
+{% endblock content %}

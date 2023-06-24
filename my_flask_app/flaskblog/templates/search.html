@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% block content %}
+    {% for user in users %}
+        <article class="media content-section">
+          <div class="media-body">
+            <div class="article-metadata">
+              <a class="mr-2" href="#">
+                <label> Username: </label>
+                {{ user.screenname }}
+              </a>
+            </div>
+            <h2><a class="account-heading" href="#">{{ user.name }}</a></h2>
+            <p class="text-secondary">
+              <label> Income: </label>
+              {{ user.income }}
+            </p>
+            <p class="text-secondary">
+              <label> Age: </label>
+              {{ user.age }}
+            </p>
+            <p class="text-secondary">
+              <label> Hobbies: </label>
+              {{ user.hobby }}
+            </p>
+          </div>
+        </article>
+    {% endfor %}
+{% endblock content %}

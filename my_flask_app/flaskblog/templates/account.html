@@ -1,0 +1,89 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="content-section">
+      <div class="media">
+        <div class="media-body">
+          <h2 class="account-heading">
+             {{user.name}}
+          </h2>
+          <p class="text-secondary">
+             <label> Username: </label>
+             {{user.screenname}}
+           </p>
+          <p class="text-secondary">
+             <label> Income: </label>
+             {{user.income}}
+          </p>
+          <p class="text-secondary">
+             <label> Age: </label>
+             {{user.age}}
+          </p>
+          <p class="text-secondary">
+             <label> Hobbies: </label>
+             {{user.hobby}}
+          </p>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <div class="content-section">
+    <h3>Your Fans</h3>
+    {% for fan in fans %}
+        <article class="media content-section">
+          <div class="media-body">
+            <div class="navbar-nav">
+              <a class="nav-item nav-link" href={{url_for('account', username=fan.screenname) }}>{{ fan.screenname }}</a>
+              <h4>
+                <a class="nav-item nav-link" href={{url_for('account', username=fan.screenname)  }}>
+                  {{fan.name}}
+                </a>
+              </h4>
+            </div>
+          </div>
+        </article>
+    {% endfor %}
+    </div>
+
+  <div class="content-section">
+  <h3>Your Dates</h3>
+  {% for date in dates %}
+  <article class="media content-section">
+    <div class="media-body">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link" href={{url_for('account', username=date.screenname) }}>{{ date.screenname }}</a>
+        <h4>
+          <a class="nav-item nav-link" href={{url_for('account', username=date.screenname)  }}>
+            {{date.name}}
+          </a>
+        </h4>
+      </div>
+    </div>
+  </article>
+  {% endfor %}
+  </div>
+
+  <div class="content-section">
+  <h3>Your Marriages</h3>
+  {% for marriage in marriages %}
+  <article class="media content-section">
+    <div class="media-body">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link" href={{url_for('account', username=marriage.screenname) }}>{{ marriage.screenname }}</a>
+        <h4>
+          <a class="nav-item nav-link" href={{url_for('account', username=marriage.screenname)  }}>
+            {{marriage.name}}
+          </a>
+        </h4>
+      </div>
+    </div>
+  </article>
+  {% endfor %}
+  </div>
+
+
+
+
+{% endblock content %}
